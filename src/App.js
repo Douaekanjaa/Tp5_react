@@ -1,10 +1,10 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Nav from './compenants/Nav';
-import Calculatrice  from './compenants/Calculatrice'
-import TodoList from './compenants/TodoList'
-import Weather from './compenants/weather'
-import Slider from './compenants/Slider'
+import Calculatrice from './compenants/Calculatrice';
+import TodoList from './compenants/TodoList';
+import Weather from './compenants/weather';
+import Slider from './compenants/Slider';
+import ErrorComponent from './compenants/ErrorComponent'; // Assuming you have an ErrorComponent
 
 function App() {
   return (
@@ -17,8 +17,7 @@ function App() {
           <Route path="/todolist" element={<TodoList />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/slider" element={<Slider />} />
-          
-         
+          <Route path="*" element={<ErrorComponent />} />
         </Routes>
       </div>
     </Router>
