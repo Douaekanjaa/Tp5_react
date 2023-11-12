@@ -1,15 +1,15 @@
-import axios from 'axios';
 import { useState, useEffect } from 'react';
-import './App.css';
-import clearSky from "./assests/clear-sky.png"
-import cloud from "./assests/cloud.png"
-import cloudy from "./assests/cloudy.png"
-import lightRain from "./assests/weather.png"
-
+import axios from 'axios';
+import clearSky from "../assests/clear-sky.png";
+import cloud from "../assests/cloud.png";
+import cloudy from "../assests/cloudy.png";
+import lightRain from "../assests/weather.png";
+import '../App.css';
 
 function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [cityName, setCityName] = useState('New York');
+  const [isFahrenheit, setIsFahrenheit] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +31,9 @@ function Weather() {
     setCityName(cityValue);
   };
 
+  const toggleTemperature = () => {
+    setIsFahrenheit((prev) => !prev);
+  };
 
   const weatherIcon = () => {
     let icon;
@@ -50,43 +53,50 @@ function Weather() {
       case "10n":
         icon = lightRain;
         break;
-      case "04n":
-
-        break;
       default:
         icon = clearSky;
     }
     return icon;
   };
+
+  const convertTemp = (kelvin) => {
+    if (isFahrenheit) {
+      return Math.round((kelvin - 273.15) * 9/5 + 32) + "°F";
+    } else {
+      return Math.round(kelvin - 273.15) + "°C";
+    }
+  };
+
   return (
     <div className="App">
       <div className="container">
         <input type="text" id="cityInput" placeholder="Enter city name" />
         <button onClick={handleSearch}>Search</button>
+        <button className="temp-toggle" onClick={toggleTemperature}>
+          {isFahrenheit ? "F°" : "C°"}
+        </button>
 
         {weatherData && (
           <div>
             <div className="top">
               <div className="location">
-                <p>{weatherData.name}</p>
+                <h3 className='temp'>{weatherData.name}</h3>
               </div>
               <div className="temp">
-                {Math.round((weatherData.main.temp - 273.15) * 9/5 + 32)}°F
+                {convertTemp(weatherData.main.temp)}
               </div>
               <div className="description">
-                {weatherData.weather[0].description}
-                {weatherData.weather[0].icon}
+                {weatherData.weather[0].description} <br />
                 <img src={weatherIcon()} className='img' alt="Weather icon" />
-             
               </div>
             </div>
             <div className="bottom">
               <div className="feels">
-                <p>Feels like: {Math.round((weatherData.main.feels_like - 273.15) * 9/5 + 32)}°F</p>
+                <p>Feels like: {convertTemp(weatherData.main.feels_like)}</p>
               </div>
               <div className="additional-info">
-                <p>Min Temp: {Math.round((weatherData.main.temp_min - 273.15) * 9/5 + 32)}°F</p>
-                <p>Max Temp: {Math.round((weatherData.main.temp_max - 273.15) * 9/5 + 32)}°F</p>
+                <p>Min Temp: {convertTemp(weatherData.main.temp_min)}</p>
+                <p>Max Temp: {convertTemp(weatherData.main.temp_max)}</p>
                 <p>Pressure: {weatherData.main.pressure} hPa</p>
                 <p>Humidity: {weatherData.main.humidity}%</p>
                 <p>Visibility: {weatherData.visibility / 1000} km</p>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './calculatrice.css'
 
 export default function Calculatrice() {
     let [res,setres]=useState("");
@@ -37,14 +37,12 @@ export default function Calculatrice() {
    };
 
   return (
-    <div>
-      <h1 style={{ color: "#8FA3FF",fontSize: "4em", fontWeight: "900", textShadow: "3px 3px 5px rgba(0, 0, 0, 0.2)", fontFamily: "cursive",}} className="text-center mt-3 mb-5">
-        Calculator
-      </h1>
-      <div className="container w-50  mb-5 shadow w-25 justify-content-center rounded py-4 px-1" style={{backgroundColor:"#9448F5"}}>
+    <div className="bd">
+  
+      <div className="container w-50 mt-3 mb-5 shadow w-25 justify-content-center rounded py-4 px-1" style={{backgroundColor:"#9448F5 !important"}}>
         
         <div className="row  mx-4   justify-content-center  mb-3 ">
-          <input type="text" value={res} className="col-9 col-md-5 px-4 py-2" style={{backgroundColor: "#96ecd4e2",border:"4px solid #277088de",color:"black"}} disabled />
+          <input type="text" value={res} className="col-9 col-md-5 px-4 py-2" style={{backgroundColor: "#96ecd4e2 !important",border:"4px solid #277088de !important",color:"black !important"}} disabled />
           <button onClick={clear} className="col-2 col-md-1 mx-1 p-3 btn shadow">C</button>
         </div>
 

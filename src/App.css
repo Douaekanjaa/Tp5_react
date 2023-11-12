@@ -38,7 +38,6 @@
 }
 
 
-/* Navigation.css */
 
 nav {
   background-color: #34495e;
@@ -70,4 +69,151 @@ a {
 a:hover {
   background-color: #2980b9;
   color: white;
+}
+
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+input[type="text"] {
+  width: 60%;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease;
+}
+
+.temp {
+  font-size: 3em;
+  font-weight: bold;
+  color: #2c3e50;
+  animation: scaleIn 1s ease;
+}
+
+.description {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #7f8c8d;
+  animation: slideIn 1s ease;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  animation: rotate 2s linear infinite;
+}
+
+.bottom {
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  animation: slideUp 1s ease;
+}
+
+.additional-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  color: #34495e;
+  animation: fadeIn 1s ease;
+}
+
+.additional-info p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.feels p {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+
+.bottom {
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-evenly;
+  animation: fadeIn 1s ease;
+}
+
+.additional-info p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  background-color: #ecf0f1;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.additional-info p:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.feels p {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.temp-toggle {
+  width: 45px;
+  height: 44px;
+  margin-left: 5px;
+  border-radius: 50%;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.temp-toggle:hover {
+  background-color: #2980b9;
 }
