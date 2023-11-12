@@ -1,0 +1,96 @@
+.TodoList {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0px auto;
+    background-color: rgba(78, 162, 181, 0.478) ;
+  }
+  
+  .TodoList2 {
+    font-weight: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #71D7B6;
+  }
+  #pink{
+    background-color: #FB8999;
+    margin: 0px;
+    padding: 20px;
+    max-width: 400px;
+    margin:  auto;
+
+  }
+
+  #frag{
+    border-radius: 5px;
+    border: 1.5px solid #fe546b;
+    padding: 0px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.434);
+    max-width: 400px;
+    margin: 5% auto;
+   
+  }
+  
+  .task-input {
+    margin: 20px 0;
+  }
+  
+  .task-input input {
+    padding: 5px;
+    margin-right: 10px;
+    outline: none;
+  }
+  
+  .task-input button {
+    background-color: #ff3363;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 100% !important;
+  }
+  
+  li button {
+   
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .pics{
+    width: 25px;
+    height: 24px;
+  }
+
+  #save{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+
+  hr{
+    border: 0.5px solid rgba(0, 0, 0, 0.961);
+    margin-top: 7px;
+  }
+
+  @media (max-width: 768px) {
+    #frag {
+      margin: 200px; 
+    }
+  
+    .TodoList {
+      padding: 20px;
+      max-width: 80%;
+      margin: 0px auto;
+      background-color: rgba(78, 162, 181, 0.478) ;
+    }
+  }
