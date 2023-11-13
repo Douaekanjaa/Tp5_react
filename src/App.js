@@ -8,19 +8,20 @@ import ErrorComponent from './compenants/ErrorComponent'; // Assuming you have a
 
 function App() {
   return (
-    <Router>
+    
       <div className="App">
         <Nav />
         <Routes>
-          <Route path="/" element={<Weather />} />
+          <Route path="/" element={<Weather/>} />
           <Route path="/Calculatrice" element={<Calculatrice />} />
           <Route path="/todolist" element={<TodoList />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/slider" element={<Slider />} />
+
           <Route path="*" element={<ErrorComponent />} />
         </Routes>
       </div>
-    </Router>
+    
   );
 }
 
